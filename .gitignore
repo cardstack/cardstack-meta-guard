@@ -1,0 +1,12 @@
+build/
+artifacts/
+cache/
+node_modules/
+.DS_Store
+env/
+.env
+.history
+coverage*
+build/
+deployments
+*.log
