@@ -5,6 +5,7 @@ import "hardhat-deploy";
 import dotenv from "dotenv";
 import type { HttpNetworkUserConfig } from "hardhat/types";
 import yargs from "yargs";
+import "./src/tasks/setup";
 
 const argv = yargs
   .option("network", {
@@ -56,6 +57,10 @@ export default {
       ...sharedNetworkConfig,
       url: `https://rinkeby.infura.io/v3/${INFURA_KEY}`,
     },
+    goerli: {
+      ...sharedNetworkConfig,
+      url: `https://goerli.infura.io/v3/${INFURA_KEY}`,
+    },
     xdai: {
       ...sharedNetworkConfig,
       url: "https://xdai.poanetwork.dev",
@@ -67,6 +72,11 @@ export default {
     matic: {
       ...sharedNetworkConfig,
       url: "https://rpc-mainnet.maticvigil.com",
+    },
+    mumbai: {
+      ...sharedNetworkConfig,
+      chainId: 80001,
+      url: `https://matic-mumbai.chainstacklabs.com`,
     },
   },
   namedAccounts: {
